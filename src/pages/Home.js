@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { Mail, Github, Linkedin, Instagram } from "lucide-react";
+
 import Navbar from "../sections/Navbar"
 import Profile from "../sections/Profile";
 import Quality from "../sections/Quality";
@@ -5,11 +8,22 @@ import Interest from "../sections/Interest";
 import Project from "../sections/Project";
 import Activity from "../sections/Activity";
 
-import { Mail, Github, Linkedin, Instagram } from "lucide-react";
-
 import "./Home.css";
 
 const Home = () => {
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            const id = hash.replace("#", "");
+            const el = document.getElementById(id);
+            if (el) {
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: "smooth" });
+                }, 0);
+            }
+        }
+    }, []);
+
     return (
         <div id="home" className="home">
             <div className="sections">

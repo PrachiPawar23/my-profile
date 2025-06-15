@@ -28,7 +28,8 @@
   margin-right: 30px;
 }
 
-.navbar li a {
+.navbar li,
+nav-item {
   cursor: pointer;
   color: white;
   background: rgba(8, 34, 53, 0.674);
@@ -40,10 +41,19 @@
   display: inline-block;
 }
 
-.navbar li a:hover {
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.navbar li:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: var(--cyber-blue);
   transform: scale(1.1);
   border-radius: 12px;
   box-shadow: 0 5px 15px var(--bs-cyber-blue);
+}
+
+.navbar li:hover button {
+  color: var(--cyber-blue);
 }
