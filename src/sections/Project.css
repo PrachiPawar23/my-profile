@@ -27,7 +27,7 @@
     border-radius: 16px;
     border-top: 1px solid var(--cyber-mint);
     border-bottom: 1px solid var(--cyber-mint);
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1);
+    /* box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1); */
 }
 
 .project-scroll-inner {
