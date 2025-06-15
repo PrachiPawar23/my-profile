@@ -1,0 +1,89 @@
+/* Home Page */
+.home {
+    height: 100vh;
+    width: 100%;
+    color: white;
+}
+
+.element-1 {
+    position: absolute;
+    height: 50px;
+    width: 80vh;
+    margin: -40px 25px;
+    background: radial-gradient(circle at 1px, #00688a, var(--cyber-purple));
+    border-top: 2px solid var(--cyber-orange);
+    border-radius: 0 48px 0 16px;
+}
+
+.resume {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    margin: -35px 50px;
+    color: white;
+    border-radius: 25px;
+    font-size: small;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.personality-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-height: 700px;
+    margin-top: 50px;
+}
+
+/* About Section */
+.about-section {
+    margin: 125px 25px 0 25px ;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.29);
+}
+
+.about-us {
+    position: absolute;
+    z-index: auto;
+    margin-top: -75px;
+    margin-left: -50px;
+    padding: 15px;
+    border-radius: 25px 25px 0 25px;
+    background-color: var(--cyber-blue);
+    color: var(--primary);
+    font-size: medium;
+}
+
+.about-info {
+    text-align: start;
+    display: flex;
+    gap: 25px;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: var(--glass-primary);
+}
+
+.contact-title {
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-links a {
+    color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contact-links a:hover {
+    transform: scale(1.2);
+    color: var(--cyber-mint);
+}

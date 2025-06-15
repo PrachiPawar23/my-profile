@@ -1,0 +1,4 @@
+npm install react-icons
+npm install react-simple-typewriter
+npm install react-swipeable
+npm install lucide-react
