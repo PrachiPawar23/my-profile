@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/my-profile/static/css/main.5106a090.css",
+    "main.js": "/my-profile/static/js/main.f834087c.js",
+    "static/js/453.45653d8f.chunk.js": "/my-profile/static/js/453.45653d8f.chunk.js",
+    "static/media/art.png": "/my-profile/static/media/art.48505117b98bf98faca6.png",
+    "static/media/bg1.png": "/my-profile/static/media/bg1.51e3e0e8adcd26a74e59.png",
+    "static/media/writing.png": "/my-profile/static/media/writing.e8aff684bfd985b7a2d6.png",
+    "static/media/quotes.png": "/my-profile/static/media/quotes.3af83ff0226f6d98fe5b.png",
+    "static/media/id1_14.jpg": "/my-profile/static/media/id1_14.9299c1143452f0fb10ec.jpg",
+    "static/media/id1_11.jpg": "/my-profile/static/media/id1_11.a5690d1ff5c07f92cd0c.jpg",
+    "static/media/id1_9.jpg": "/my-profile/static/media/id1_9.e24dc12e0e000b695128.jpg",
+    "static/media/id1_1.jpg": "/my-profile/static/media/id1_1.487f7929e9cab96a1ce1.jpg",
+    "static/media/id1_5.jpg": "/my-profile/static/media/id1_5.e94bbdb93e6eea97e920.jpg",
+    "static/media/id1_4.jpg": "/my-profile/static/media/id1_4.bafaca039da3992573e5.jpg",
+    "static/media/id1_13.jpg": "/my-profile/static/media/id1_13.921866bd0c03b7b7bf20.jpg",
+    "static/media/id1_10.jpg": "/my-profile/static/media/id1_10.722b51c2c382832da521.jpg",
+    "static/media/id1_12.jpg": "/my-profile/static/media/id1_12.c2de9ef9d2e251f2eb20.jpg",
+    "static/media/id1_6.jpg": "/my-profile/static/media/id1_6.70a4a9f2ac7969e1bbcc.jpg",
+    "static/media/id1_2.jpg": "/my-profile/static/media/id1_2.a2b5cdbd38aea6923230.jpg",
+    "static/media/id1_8.jpg": "/my-profile/static/media/id1_8.6a58be950e1eba665d11.jpg",
+    "static/media/id1_3.jpg": "/my-profile/static/media/id1_3.f3fa61565e57a82b50e2.jpg",
+    "static/media/id1_7.jpg": "/my-profile/static/media/id1_7.5445c0388e4c1b4c6dc7.jpg",
+    "static/media/profile-img2.png": "/my-profile/static/media/profile-img2.2a0093201ab99cfe44f7.png",
+    "index.html": "/my-profile/index.html",
+    "main.5106a090.css.map": "/my-profile/static/css/main.5106a090.css.map",
+    "main.f834087c.js.map": "/my-profile/static/js/main.f834087c.js.map",
+    "453.45653d8f.chunk.js.map": "/my-profile/static/js/453.45653d8f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5106a090.css",
+    "static/js/main.f834087c.js"
+  ]
+}
