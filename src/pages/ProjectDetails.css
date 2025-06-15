@@ -44,7 +44,8 @@
   flex: 1;
   padding: 40px;
   overflow-y: auto;
-  background: linear-gradient(135deg, var(--cyber-purple), var(--cyber-blue));
+  /* background: linear-gradient(135deg, var(--cyber-purple), var(--cyber-blue)); */
+  background: linear-gradient(135deg, var(--grad-bg1), var(--grad-bg2));
   margin-left: 10px;
 }
 

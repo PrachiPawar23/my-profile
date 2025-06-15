@@ -3,9 +3,12 @@ import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 
 import Navbar from "../sections/Navbar"
 import Profile from "../sections/Profile";
+import Skills from "../sections/Skills";
 import Quality from "../sections/Quality";
 import Interest from "../sections/Interest";
 import Project from "../sections/Project";
+import Experiences from "../sections/Experiences";
+import Achievements from "../sections/Achievements";
 import Activity from "../sections/Activity";
 
 import "./Home.css";
@@ -33,12 +36,15 @@ const Home = () => {
                 <div className="resume" onClick={() => window.open("/resume.pdf", "_blank")}>
                     <h4><i>Click to here see my Resume</i></h4>
                 </div>
+                <Skills />
                 <section className="personality-section">
                     <Quality />
                     <Interest />
                 </section>
                 <Project />
+                <Experiences />
                 {/* <Activity /> */}
+                <Achievements />
                 <section id="about">
                     <div className="about-section">
                         <h1 className="about-us">About Us</h1>
@@ -75,16 +81,16 @@ const Home = () => {
                     <div className="contact-section">
                         <h3 className="contact-title">Contact</h3>
                         <div className="contact-links">
-                            <a href="mailto:your.email@example.com" target="_blank" rel="noopener noreferrer" title="Email">
+                            <a href="mailto:prachipawar2705@gmail.com" target="_blank" rel="noopener noreferrer" title="Email: prachipawar2705@gmail.com">
                                 <Mail size={24} />
                             </a>
-                            <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <a href="https://github.com/PrachiPawar23" target="_blank" rel="noopener noreferrer" title="GitHub: https://github.com/PrachiPawar23">
                                 <Github size={24} />
                             </a>
-                            <a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/prachi-minal-pawar" target="_blank" rel="noopener noreferrer" title="LinkedIn: https://www.linkedin.com/in/prachi-minal-pawar">
                                 <Linkedin size={24} />
                             </a>
-                            <a href="https://www.instagram.com/your-username" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <a href="https://www.instagram.com/the.quietexplorer" target="_blank" rel="noopener noreferrer" title="Instagram: https://www.instagram.com/the.quietexplorer">
                                 <Instagram size={24} />
                             </a>
                         </div>

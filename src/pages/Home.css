@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: space-evenly;
     max-height: 700px;
-    margin-top: 50px;
+    margin: 50px 50px 75px 0;
 }
 
 /* About Section */
@@ -83,7 +83,7 @@
 }
 
 .contact-links a {
-    color: var(--dark-blue);
+    color: #ffffff;
     /* color: rgba(255, 255, 255, 0.1); */
     transition: transform 0.2s ease, color 0.2s ease;
 }

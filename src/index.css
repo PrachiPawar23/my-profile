@@ -20,7 +20,8 @@ code {
   --text-primary: #000000;
 
   --primary: #081324;
-  --dark-blue: rgb(15, 54, 84);
+  --dark-blue: rgb(10, 33, 51);
+  /* --dark-blue: rgb(15, 54, 84); */
   --cyber-blue: #00eaff; /* #00ffff */
   --cyber-pink: #ff00ff;
   --cyber-purple: #800080;
@@ -28,9 +29,14 @@ code {
   --cyber-yellow: #ffff00;
   --cyber-mint: #00ff94;
   --cyber-orange: #ff7f00;
+
+  --grad-bg1: #80008085; 
+  --grad-bg2: #00eaff7b;
+
   /* --icy-blue: #e0e6ff; */
   --bs-cyber-blue: rgba(0, 255, 255, 0.3);
   --glass: rgba(255, 255, 255, 0.08);
-  --glass-primary: rgba(0, 255, 255, 0.08);;
+  --glass-primary: rgba(0, 255, 255, 0.08);
+  --glass-secondary: rgba(0, 255, 153, 0.08);
   --glass-dark: rgba(0, 0, 0, 0.29);
 }

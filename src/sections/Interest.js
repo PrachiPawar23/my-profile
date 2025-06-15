@@ -3,14 +3,15 @@ import "./Interest.css";
 
 const Interest = () => {
     const [interests] = useState([
-        "Web Development", "Artificial Intelligence", "Machine Learning", "Neural Networks",
-        "Deep Learning", "Cybersecurity", "Software Development", "Cloud Computing",
-        "Mobile App Development", "Game Development", "Android Development", 
-        "User Interface (UI) Design", "User Experience (UX) Design",
-        "Robotics", "Internet of Things (IoT)", "Military Applications", 'Space Exploration',
-        "Geography", "Psychology", "Language Learning", "Traveling", "Culture",
-        "Writing", "Photography", "Music", "Art & Drawing", "Sports"
+        "Cybersecurity", "Web Development", "Software Development", "Cloud Computing",
+        "Mobile App Development", "Android Development", "Game Development",
+        "Artificial Intelligence", "Machine Learning", "Neural Networks", "Deep Learning",
+        "User Interface (UI) Design", "User Experience (UX) Design", "Robotics",
+        "Internet of Things (IoT)", "Military Applications", "Space Exploration",
+        "Geography", "Psychology", "Language Learning", "Writing", "Photography",
+        "Music", "Art & Drawing", "Traveling", "Culture", "Sports", "Games"
     ]);
+
 
     return (
         <div>
