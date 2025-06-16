@@ -19,7 +19,7 @@ const languages = [
   "English B2-C1",
   "Hindi",
   "Marathi",
-  "Spanish A2",
+  "Spanish A1",
   "Introductory German",
   "Introductory Korean",
 ];
