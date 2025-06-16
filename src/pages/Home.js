@@ -35,7 +35,7 @@ const Home = () => {
                 <Navbar />
                 <Profile />
                 <div className="element-1" />
-                <div className="resume" onClick={() => window.open("/resume.pdf", "_blank")}>
+                <div className="resume" onClick={() => window.open(process.env.PUBLIC_URL + "/resume.pdf", "_blank")}>
                     <h4><i>Click to here see my Resume</i></h4>
                 </div>
                 <Skills />
