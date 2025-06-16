@@ -35,15 +35,6 @@
     margin: 50px 50px 75px 0;
 }
 
-/* .additional-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    max-height: 700px;
-    margin: 50px 25px 75px 25px;
-    background-color: rgba(0, 0, 0, 0.29);
-} */
-
 .additional-section {
     display: flex;
     flex-direction: column;
@@ -52,7 +43,6 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    /* background-color: rgba(255, 255, 255, 0.03); */
     border-radius: 20px;
 }
 
@@ -112,4 +102,75 @@
 .contact-links a:hover {
     transform: scale(1.2);
     color: var(--cyber-mint);
+}
+
+@media only screen and (max-width: 768px) {
+    /* Home Page Adjustments */
+    .home {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 40px;
+    }
+    
+    .element-1 {
+        width: 80%;
+        height: 40px;
+        margin: -25px 15px;
+        border-radius: 0 24px 0 8px;
+    }
+    
+    .resume {
+        left: 0;
+        margin: -25px 35px;
+        font-size: 0.8rem;
+    }
+    
+    .personality-section {
+        max-height: 600px;
+        margin: 75px 15px 50px 15px;
+        gap: 30px;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+    
+    .additional-section {
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .about-section {
+        margin: 80px 15px 0 15px;
+        padding: 25px 20px;
+    }
+    
+    .about-us {
+        margin-top: -50px;
+        margin-left: -20px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .about-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-section {
+        margin: 30px 0 0 0;
+        padding: 25px 15px;
+    }
+    
+    .contact-title {
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .contact-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .contact-links a {
+        font-size: 1.5rem;
+    }
 }

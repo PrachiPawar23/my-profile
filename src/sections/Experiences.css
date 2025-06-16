@@ -106,3 +106,9 @@
     transform: translateY(0);
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .experience-section {
+    margin: -10px 15px 60px 15px;
+  }  
+}

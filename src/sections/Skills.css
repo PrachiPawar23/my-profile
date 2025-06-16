@@ -46,6 +46,7 @@
     justify-content: center;
     gap: 15px;
 }
+
 .languages-badge {
     background: var(--cyber-green);
     color: var(--primary);
@@ -60,4 +61,35 @@
 .skill-badge:hover {
     transform: scale(1.1);
     box-shadow: 0 0 15px var(--cyber-mint);
+}
+
+@media only screen and (max-width: 768px) {
+    .skills-section {
+        display: flex;
+        flex-direction: column;
+        margin: 100px 15px 40px 15px;
+        padding: 50px 15px;
+        gap: 15px;
+    }
+
+    .skills-title,
+    .languages-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .skills-container,
+    .languages-container {
+        gap: 10px;
+    }
+
+    .skill-badge,
+    .languages-badge {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .skill-badge:hover {
+        transform: scale(1.05);
+    }
 }

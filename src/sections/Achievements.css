@@ -53,12 +53,36 @@
 
 .achievement-year {
     font-weight: 400;
-    color: #ccc;
+    color: #cccccc;
     font-size: 1rem;
 }
 
 .achievement-card p {
     font-size: 1rem;
-    color: #ddd;
+    color: #ffffff;
     line-height: 1.4;
+}
+
+@media only screen and (max-width: 768px) {
+  .achievements-section {
+    margin: 60px 15px 50px 15px;
+    padding: 40px 15px;
+  }
+
+  .achievements-container {
+    grid-auto-flow: row; 
+    grid-template-rows: none;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 15px;
+    overflow-y: auto;
+    max-width: 100%;
+    max-height: 500px;;
+  }
+
+  .achievement-card {
+    width: 350px; 
+    padding: 15px 20px;
+    margin: 0 auto;
+  }
 }

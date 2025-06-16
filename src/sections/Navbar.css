@@ -57,3 +57,13 @@ nav-item {
 .navbar li:hover button {
   color: var(--cyber-blue);
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 15px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}

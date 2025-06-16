@@ -47,3 +47,20 @@
 .hobbies-item:hover {
     color: var(--cyber-pink);
 }
+
+@media only screen and (max-width: 768px) {
+  .hobbies-section {
+    width: 400px; 
+    max-width: 100%; 
+    padding: 20px;
+    margin: 0 auto; 
+    border-radius: 14px;
+    backdrop-filter: blur(6px); 
+  }
+
+  .hobbies-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+}

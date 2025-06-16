@@ -37,7 +37,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <hr />
+      <hr className="divider"/>
       <div>
         <h2 className="languages-title">Languages I Know</h2>
         <div className="languages-container">

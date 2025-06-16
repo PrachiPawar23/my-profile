@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { HiChevronRight, HiChevronLeft, HiArrowLeft } from "react-icons/hi";
+import { HiChevronRight, HiChevronLeft, HiArrowLeft, HiMenu } from "react-icons/hi";
 import { projects } from "../utils/projectsData";
 import "./ProjectDetails.css";
 
@@ -8,9 +8,23 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const projectId = parseInt(id, 10);
+  const [zoomIndex, setZoomIndex] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const currentProject = projects.find((p) => p.id === projectId);
-  const [zoomIndex, setZoomIndex] = useState(null);
 
   if (!currentProject) {
     return (
@@ -20,6 +34,10 @@ const ProjectDetails = () => {
       </div>
     );
   }
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   const openZoom = (index) => setZoomIndex(index);
   const closeZoom = () => setZoomIndex(null);
@@ -36,7 +54,37 @@ const ProjectDetails = () => {
 
   return (
     <div className="project-details-wrapper">
-      <aside className="project-sidebar">
+      {/* Mobile Toggle Button */}
+      {isMobile && (
+        <button className="sidebar-toggle" onClick={toggleSidebar}>
+          <HiMenu size={24} />
+        </button>
+      )}
+
+      {/* Sidebar Overlay */}
+      {isMobile && sidebarOpen && (
+        <div className="sidebar-overlay" onClick={toggleSidebar} />
+      )}
+
+      {/* Project Sidebar */}
+      <aside className={`project-sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <h3 style={{ marginLeft: '10px' }}>Projects</h3>
+        <ul>
+          {projects.map((project) => (
+            <li
+              key={project.id}
+              className={project.id === projectId ? "active" : ""}
+              onClick={() => {
+                navigate(`/projects/${project.id}`);
+                if (isMobile) setSidebarOpen(false);
+              }}
+            >
+              {project.title}
+            </li>
+          ))}
+        </ul>
+      </aside>
+      {/* <aside className="project-sidebar">
         <h3 style={{ marginLeft: '10px' }}>Projects</h3>
         <ul>
           {projects.map((project) => (
@@ -49,7 +97,7 @@ const ProjectDetails = () => {
             </li>
           ))}
         </ul>
-      </aside>
+      </aside> */}
 
       <main className="project-details-container">
         <div className="project-header">

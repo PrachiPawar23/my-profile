@@ -31,3 +31,20 @@
     backdrop-filter: blur(25px);
 }
 
+@media only screen and (max-width: 768px) {
+  .about-me {
+    flex-direction: column;
+    min-height: 500px; 
+    height: auto; 
+    padding: 30px 20px;
+    margin: 15px;
+    gap: 15px;
+    overflow: hidden; 
+  }
+
+  .about-me-text {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px; 
+  }
+}

@@ -61,20 +61,20 @@ const Home = () => {
                                 This platform is designed to represent individuality through well-crafted,
                                 interactive, and modern personal landing pages.
                             </p>
-                            <hr className="v-divider" />
+                            <hr className="divider" />
                             <p>
                                 I'm a Computer Science and Technology student at Usha Mittal Institute of Technology (UMIT),
                                 and I created Profile Lander to reflect my passion for innovation, design, and impactful storytelling.
                                 Whether you're a developer, designer, or creative mind, this project aims to give your digital
                                 identity a unique and professional presence.
                             </p>
-                            <hr className="v-divider" />
+                            <hr className="divider" />
                             <p>
                                 Built using <em>ReactJS</em>, styled with modern UI principles, and enriched with animations and
                                 thoughtful user experience, this project showcases not only technical skills but also a strong
                                 commitment to meaningful design.
                             </p>
-                            <hr className="v-divider" />
+                            <hr className="divider" />
                             <p>
                                 This page isn’t just a showcase — it’s a canvas of my journey, skills, and aspirations.
                                 Designed and developed by me, it brings together the things I value most: clarity, creativity, and connection.

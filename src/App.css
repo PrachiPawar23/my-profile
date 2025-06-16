@@ -2,7 +2,7 @@ li {
   font-size: small;
 }
 
-.v-divider {
+/* .v-divider {
   width: 1px;
   height: auto;
   color: aliceblue;
@@ -12,6 +12,11 @@ li {
   width: auto;
   height: 1px;
   color: aliceblue;
+} */
+
+
+.divider {
+  border: 1px solid #ffffff;
 }
 
 a {
@@ -42,4 +47,11 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--cyber-purple);
+}
+
+@media only screen and (max-width: 768px) {
+  .divider {
+    border: 1px solid #ffffff;
+    width: 100%;
+  }
 }

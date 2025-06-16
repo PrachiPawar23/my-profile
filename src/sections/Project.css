@@ -125,3 +125,26 @@
     font-size: small;
     margin-top: 25px;
 }
+
+@media only screen and (max-width: 768px) {
+  .project-section {
+    margin: 30px 15px 15px 15px; 
+    position: relative;
+    z-index: 1; 
+  }
+
+  .interest-section {
+    margin-top: 40px; 
+    position: relative;
+    z-index: 2;
+  }
+
+  .interest-section {
+    padding-top: 40px; 
+  }
+
+  .project-scroll-inner.clone {
+    position: absolute;
+    left: 600%;
+}
+}

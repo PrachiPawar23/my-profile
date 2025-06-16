@@ -28,15 +28,6 @@
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
 }
 
-.hobbies-list {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px 20px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
 .courses-list {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -53,7 +44,34 @@
     transition: color 0.2s ease;
 }
 
-.hobby-item:hover,
 .course-item:hover {
     color: var(--cyber-green);
+}
+
+@media only screen and (max-width: 768px) {
+  .courses-section {
+    width: 400px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+  }
+
+  .courses-section:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 8px 16px rgba(0, 255, 128, 0.1),
+               inset 0 0 8px rgba(0, 255, 128, 0.03);
+  }
+
+  .courses-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .courses-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }
