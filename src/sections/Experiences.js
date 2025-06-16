@@ -3,7 +3,7 @@ import "./Experiences.css";
 
 const experiencesList = [
     {
-        role: "Full Stack Developer Intern",
+        role: "Full Stack Developer Intern & Team Leader",
         company: "Alhansat Solutions",
         year: "Sep – Oct 2023",
         description:

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Mail, Github, Linkedin, Instagram } from "lucide-react";
+import { FaPinterestP, FaMediumM } from "react-icons/fa";
 
 import Navbar from "../sections/Navbar"
 import Profile from "../sections/Profile";
@@ -53,39 +54,38 @@ const Home = () => {
                 <Achievements />
                 <section id="about">
                     <div className="about-section">
-                        <h1 className="about-us">About Us</h1>
+                        <h1 className="about-us">About Me</h1>
                         <div className="about-info">
                             <p>
-                                Welcome to <strong>Profile Lander</strong> — a space where creativity meets technology.
-                                This platform is crafted with a vision to represent individuality through well-designed,
+                                Welcome to <strong>My Profile Lander</strong> — a space where creativity meets technology.
+                                This platform is designed to represent individuality through well-crafted,
                                 interactive, and modern personal landing pages.
                             </p>
                             <hr className="v-divider" />
                             <p>
-                                Initiated by myself, a Computer Science and Technology
-                                student at Usha Mittal Institute of Technology (UMIT), Profile Lander reflects
-                                a passion for innovation, design, and impactful storytelling. Whether you're a
-                                developer, designer, or creative soul, Profile Lander aims to give your digital
-                                identity a unique, professional presence.
+                                I'm a Computer Science and Technology student at Usha Mittal Institute of Technology (UMIT),
+                                and I created Profile Lander to reflect my passion for innovation, design, and impactful storytelling.
+                                Whether you're a developer, designer, or creative mind, this project aims to give your digital
+                                identity a unique and professional presence.
                             </p>
                             <hr className="v-divider" />
                             <p>
-                                Built using <em>ReactJS</em>, styled with modern UI principles, and enriched
-                                with animations and thoughtful user experience, this project highlights
-                                not just technical skills — but a deep commitment to presenting stories
-                                in compelling ways.
+                                Built using <em>ReactJS</em>, styled with modern UI principles, and enriched with animations and
+                                thoughtful user experience, this project showcases not only technical skills but also a strong
+                                commitment to meaningful design.
                             </p>
                             <hr className="v-divider" />
                             <p>
-                                Future updates will bring more templates, dynamic themes, and integrations,
-                                making it easier for anyone to build and share their story — beautifully.
+                                This page isn’t just a showcase — it’s a canvas of my journey, skills, and aspirations.
+                                Designed and developed by me, it brings together the things I value most: clarity, creativity, and connection.
                             </p>
                         </div>
                     </div>
                 </section>
+
                 <section id="contact">
                     <div className="contact-section">
-                        <h3 className="contact-title">Contact</h3>
+                        <h3 className="contact-title">Social Media</h3>
                         <div className="contact-links">
                             <a href="mailto:prachipawar2705@gmail.com" target="_blank" rel="noopener noreferrer" title="Email: prachipawar2705@gmail.com">
                                 <Mail size={24} />
@@ -98,6 +98,12 @@ const Home = () => {
                             </a>
                             <a href="https://www.instagram.com/the.quietexplorer" target="_blank" rel="noopener noreferrer" title="Instagram: https://www.instagram.com/the.quietexplorer">
                                 <Instagram size={24} />
+                            </a>
+                            <a href="https://in.pinterest.com/prachipawar23" target="_blank" rel="noopener noreferrer" title="Pinterest: digital art & sketches">
+                                <FaPinterestP size={24} /> {/* You'll need to import a Pinterest icon, or use a custom SVG/text */}
+                            </a>
+                            <a href="https://medium.com/@prachi_pawar0823" target="_blank" rel="noopener noreferrer" title="Medium">
+                                <FaMediumM size={24} />
                             </a>
                         </div>
                     </div>

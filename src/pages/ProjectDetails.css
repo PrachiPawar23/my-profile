@@ -100,6 +100,7 @@
   color: var(--cyber-blue);
 }
 
+.project-year p,
 .project-abstract p,
 .project-references p {
   font-size: 1.1rem;
@@ -129,6 +130,21 @@
   border-radius: 12px;
   box-shadow: 0 0 15px var(--cyber-blue);
   max-width: 100%;
+}
+
+
+.landscape-video {
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--cyber-blue);
+  width: 500px;
+  height: 300px;
+}
+
+.portrait-video {
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--cyber-blue);
+  width: 200px;
+  height: 400px;
 }
 
 .screenshots-container {

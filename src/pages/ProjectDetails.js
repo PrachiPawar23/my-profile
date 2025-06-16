@@ -59,6 +59,11 @@ const ProjectDetails = () => {
           </div>
         </div>
 
+        <section className="project-year">
+          <h3>Year</h3>
+          <p>{currentProject.year}</p>
+        </section>
+
         <section className="project-abstract">
           <h3>Abstract</h3>
           <p>{currentProject.abstract}</p>
@@ -78,16 +83,20 @@ const ProjectDetails = () => {
             <>
               <h3>Videos</h3>
               <div className="videos-container">
-                {currentProject.videos.map((videoUrl, idx) => (
-                  <iframe
-                    key={idx}
-                    src={videoUrl}
-                    title={`Project video ${idx + 1}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                ))}
+                {currentProject.videos.map((videoUrl, idx) => {
+                  const isPortrait = videoUrl.includes("portrait");
+                  return (
+                    <iframe
+                      key={idx}
+                      src={videoUrl}
+                      title={`Project video ${idx + 1}`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className={isPortrait ? "portrait-video" : "landscape-video"}
+                    ></iframe>
+                  );
+                })}
               </div>
             </>
           )}

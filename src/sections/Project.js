@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HiArrowRight } from "react-icons/hi";
+import { HiArrowRight, HiChevronDoubleRight } from "react-icons/hi";
 import { projects } from "../utils/projectsData";
 import "./Project.css";
 
@@ -46,26 +46,34 @@ const ProjectCard = ({ project }) => {
 };
 
 const Project = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="projects">
       <div className="project-section">
         <div className="project-title">
           <h1>Projects</h1>
+          <button className="view-all-button" onClick={() => navigate("/projects/1")}>
+            <div style={{display: "flex", alignItems: "center", gap: "5px"}}>
+              <span><i>View All</i></span>
+              <HiChevronDoubleRight />
+            </div>
+          </button>
         </div>
         <div className="project-container">
           <div className="project-scroll-inner">
             {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard key={project.id} project={project} title="Click to Flip" />
             ))}
           </div>
           <div className="project-scroll-inner clone">
             {projects.map((project) => (
-              <ProjectCard key={`clone-${project.id}`} project={project} />
+              <ProjectCard key={`clone-${project.id}`} project={project} title="Click to Flip" />
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
