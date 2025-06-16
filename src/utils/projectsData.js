@@ -16,10 +16,10 @@ import id3_1 from "./projectMedia/id3_1.png";
 
 import id1v_1 from "./projectMedia/id1v_1.mp4";
 import id2v_1 from "./projectMedia/id2v_1.mp4";
-import id5_1_portrait from "./projectMedia/id5_1_portrait.mp4";
-import id6_1_portrait from "./projectMedia/id6_1_portrait.mp4";
-import id7_1_portrait from "./projectMedia/id7_1_portrait.mp4";
-import id8_1_portrait from "./projectMedia/id8_1_portrait.mp4";
+import id5v_1_portrait from "./projectMedia/id5v_1_portrait.mp4";
+import id6v_1_portrait from "./projectMedia/id6v_1_portrait.mp4";
+import id7v_1_portrait from "./projectMedia/id7v_1_portrait.mp4";
+import id8v_1_portrait from "./projectMedia/id8v_1_portrait.mp4";
 
 
 export const projects = [
@@ -72,7 +72,7 @@ export const projects = [
     year: "2024",
     abstract: "An Android app that fetches Pokémon data using a public REST API and displays it in scrollable card layouts using Retrofit and Glide.",
     techStack: ["Android Studio", "Java", "XML", "Retrofit", "Glide", "REST API"],
-    videos: [id5_1_portrait],
+    videos: [id5v_1_portrait],
     screenshots: [],
     references: [],
   },
@@ -82,7 +82,7 @@ export const projects = [
     year: "2024",
     abstract: "A prototypical blog app for posting, editing, and deleting blogs using Firebase.",
     techStack: ["Android Studio", "Java", "XML", "Firebase"],
-    videos: [id6_1_portrait],
+    videos: [id6v_1_portrait],
     screenshots: [],
     references: [],
   },
@@ -92,7 +92,7 @@ export const projects = [
     year: "2024",
     abstract: "Simple Android app to calculate tips and split bills.",
     techStack: ["Android Studio", "Java", "XML"],
-    videos: [id7_1_portrait],
+    videos: [id7v_1_portrait],
     screenshots: [],
     references: [],
   },
@@ -102,7 +102,7 @@ export const projects = [
     year: "2024",
     abstract: "A conceptual UI design for a professional networking app developed in Android Studio. Focuses on layout, theming, and interaction flow.",
     techStack: ["Android Studio", "Java", "XML"],
-    videos: [id8_1_portrait],
+    videos: [id8v_1_portrait],
     screenshots: [],
     references: [],
   },
