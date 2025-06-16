@@ -14,8 +14,8 @@ import id1_13 from "./projectMedia/id1_13.jpg";
 import id1_14 from "./projectMedia/id1_14.jpg";
 import id3_1 from "./projectMedia/id3_1.png";
 
-import id1_15 from "./projectMedia/id1_15.mp4";
-import id2_1 from "./projectMedia/id2_1.mp4";
+import id1v_1 from "./projectMedia/id1v_1.mp4";
+import id2v_1 from "./projectMedia/id2v_1.mp4";
 import id5_1_portrait from "./projectMedia/id5_1_portrait.mp4";
 import id6_1_portrait from "./projectMedia/id6_1_portrait.mp4";
 import id7_1_portrait from "./projectMedia/id7_1_portrait.mp4";
@@ -29,7 +29,7 @@ export const projects = [
     year: "2024 - Present",
     abstract: "A blog app for posting, editing, and deleting blogs using Firebase.",
     techStack: ["React JS", "CSS", "Firebase"],
-    videos: [id1_15],
+    videos: [id1v_1],
     screenshots: [
       id1_1, id1_2, id1_3, id1_4, id1_5, id1_6, id1_7,
       id1_8, id1_9, id1_10, id1_11, id1_12, id1_13, id1_14
@@ -42,7 +42,7 @@ export const projects = [
     year: "2023",
     abstract: "A web application to convert time across global time zones instantly.",
     techStack: ["HTML", "CSS", "JavaScript", "Svelte"],
-    videos: [id2_1],
+    videos: [id2v_1],
     screenshots: [],
     references: [],
   },
