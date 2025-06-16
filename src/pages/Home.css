@@ -35,9 +35,30 @@
     margin: 50px 50px 75px 0;
 }
 
+/* .additional-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-height: 700px;
+    margin: 50px 25px 75px 25px;
+    background-color: rgba(0, 0, 0, 0.29);
+} */
+
+.additional-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* background-color: rgba(255, 255, 255, 0.03); */
+    border-radius: 20px;
+}
+
 /* About Section */
 .about-section {
-    margin: 125px 25px 0 25px ;
+    margin: 125px 25px 0 25px;
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.29);
 }

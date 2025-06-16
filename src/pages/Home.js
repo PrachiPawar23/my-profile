@@ -8,8 +8,10 @@ import Quality from "../sections/Quality";
 import Interest from "../sections/Interest";
 import Project from "../sections/Project";
 import Experiences from "../sections/Experiences";
+import Hobbies from "../sections/Hobbies";
+import Courses from "../sections/Courses";
 import Achievements from "../sections/Achievements";
-import Activity from "../sections/Activity";
+// import Activity from "../sections/Activity";
 
 import "./Home.css";
 
@@ -43,6 +45,10 @@ const Home = () => {
                 </section>
                 <Project />
                 <Experiences />
+                <section className="additional-section">
+                    <Hobbies />
+                    <Courses />
+                </section>
                 {/* <Activity /> */}
                 <Achievements />
                 <section id="about">

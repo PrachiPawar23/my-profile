@@ -35,7 +35,7 @@ const experiencesList = [
         techStack: ["Android Studio", "Java", "XML"],
     },
     {
-        role: "Cybersecurity Intern",
+        role: "Cybersecurity Intern – Course",
         company: "Acmegrade",
         year: "Oct 2023",
         description:
@@ -94,7 +94,7 @@ const Experiences = () => {
     };
 
     return (
-        <section id="experience" className="experience-section">
+        <section id="experiences" className="experience-section">
             <h3 className="experience-title">Experience</h3>
             <div className="timeline">
                 {experiencesList.map((item, index) => (

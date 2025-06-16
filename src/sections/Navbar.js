@@ -33,12 +33,16 @@ const Navbar = () => {
     return (
         <div className={`navbar${scrolled ? ' scrolled' : ''}`}>
             <ul>
-                <li><button className='nav-item' onClick={() => handleAnchorClick("home")}>Home</button></li>
-                <li><button className='nav-item' onClick={() => handleAnchorClick("profile")}>Profile</button></li>
-                <li><button className='nav-item' onClick={() => handleAnchorClick("projects")}>Projects</button></li>
-                {/* <li><button className='nav-item' onClick={() => handleAnchorClick("activities")}>Activities</button></li> */}
-                <li><button className='nav-item' onClick={() => handleAnchorClick("about")}>About</button></li>
-                <li><button className='nav-item' onClick={() => handleAnchorClick("contact")}>Contact</button></li>
+                <li onClick={() => handleAnchorClick("home")}><button className='nav-item'>Home</button></li>
+                <li onClick={() => handleAnchorClick("profile")}><button className='nav-item'>Profile</button></li>
+                <li onClick={() => handleAnchorClick("skills")}><button className='nav-item'>Skills</button></li>
+                <li onClick={() => handleAnchorClick("projects")}><button className='nav-item'>Projects</button></li>
+                <li onClick={() => handleAnchorClick("experiences")}><button className='nav-item'>Experiences</button></li>
+                <li onClick={() => handleAnchorClick("hobbies")}><button className='nav-item'>Hobbies</button></li>
+                <li onClick={() => handleAnchorClick("courses")}><button className='nav-item'>Courses</button></li>
+                {/* <li onClick={() => handleAnchorClick("activities")}><button className='nav-item'>Activities</button></li> */}
+                <li onClick={() => handleAnchorClick("about")}><button className='nav-item'>About</button></li>
+                <li onClick={() => handleAnchorClick("contact")}><button className='nav-item'>Contact</button></li>
             </ul>
         </div>
     );
