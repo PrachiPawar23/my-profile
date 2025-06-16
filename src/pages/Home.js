@@ -100,13 +100,13 @@ const Home = () => {
                             <a href="https://www.instagram.com/the.quietexplorer" target="_blank" rel="noopener noreferrer" title="Instagram: https://www.instagram.com/the.quietexplorer">
                                 <Instagram size={24} />
                             </a>
-                            <a href="https://in.pinterest.com/prachipawar23" target="_blank" rel="noopener noreferrer" title="Pinterest: digital art & sketches">
+                            <a href="https://in.pinterest.com/prachipawar23" target="_blank" rel="noopener noreferrer" title="Pinterest: https://in.pinterest.com/prachipawar23">
                                 <FaPinterestP size={24} /> {/* You'll need to import a Pinterest icon, or use a custom SVG/text */}
                             </a>
-                            <a href="https://medium.com/@prachi_pawar0823" target="_blank" rel="noopener noreferrer" title="Medium">
+                            <a href="https://medium.com/@prachi_pawar0823" target="_blank" rel="noopener noreferrer" title="Medium: https://medium.com/@prachi_pawar0823">
                                 <FaMediumM size={24} />
                             </a>
-                            <a href="https://www.duolingo.com/profile/PrachiPawar23" target="_blank" rel="noopener noreferrer" title="Duolingo">
+                            <a href="https://www.duolingo.com/profile/PrachiPawar23" target="_blank" rel="noopener noreferrer" title="Duolingo: https://www.duolingo.com/profile/PrachiPawar23">
                                 <SiDuolingo size={24} />
                             </a>
                         </div>

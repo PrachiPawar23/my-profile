@@ -42,7 +42,7 @@ const Navbar = () => {
                 <li onClick={() => handleAnchorClick("courses")}><button className='nav-item'>Courses</button></li>
                 {/* <li onClick={() => handleAnchorClick("activities")}><button className='nav-item'>Activities</button></li> */}
                 <li onClick={() => handleAnchorClick("about")}><button className='nav-item'>About</button></li>
-                <li onClick={() => handleAnchorClick("contact")}><button className='nav-item'>Contact</button></li>
+                <li onClick={() => handleAnchorClick("contact")}><button className='nav-item'>Social</button></li>
             </ul>
         </div>
     );
