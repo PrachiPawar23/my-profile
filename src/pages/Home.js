@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 import { FaPinterestP, FaMediumM } from "react-icons/fa";
+import { SiDuolingo } from "react-icons/si";
 
 import Navbar from "../sections/Navbar"
 import Profile from "../sections/Profile";
@@ -104,6 +105,9 @@ const Home = () => {
                             </a>
                             <a href="https://medium.com/@prachi_pawar0823" target="_blank" rel="noopener noreferrer" title="Medium">
                                 <FaMediumM size={24} />
+                            </a>
+                            <a href="https://www.duolingo.com/profile/PrachiPawar23" target="_blank" rel="noopener noreferrer" title="Duolingo">
+                                <SiDuolingo size={24} />
                             </a>
                         </div>
                     </div>
