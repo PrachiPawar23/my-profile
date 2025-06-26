@@ -49,7 +49,7 @@ export const projects = [
   {
     id: 3,
     title: "MusicFlow",
-    year: "2025",
+    year: "2025 (Build in Progress)",
     abstract: "A JavaFX application that works as a classic music player for musics from a local library along with AI-driven mood-based playlist generation for locally stored music as well as youtube/spotify links.",
     techStack: ["Android Studio", "Java", "XML"],
     videos: [],
