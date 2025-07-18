@@ -112,3 +112,9 @@
     margin: -10px 15px 60px 15px;
   }  
 }
+
+@media only screen and (min-width: 430px) {
+  .experience-section {
+    margin: -10px 15px 60px 15px;
+  }  
+}
