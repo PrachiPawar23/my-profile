@@ -51,6 +51,7 @@
 @media only screen and (max-width: 768px) {
   .courses-section {
     width: 400px;
+    max-width: 100%;
     padding: 20px;
     margin: 20px auto;
     border-radius: 14px;
@@ -72,5 +73,16 @@
   .courses-list {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .courses-section {
+    width: 200px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
   }
 }
