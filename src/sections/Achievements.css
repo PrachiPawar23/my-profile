@@ -86,3 +86,11 @@
     margin: 0 auto;
   }
 }
+
+@media only screen and (max-width: 430px) {
+  .achievement-card {
+    width: 280px; 
+    padding: 15px 20px;
+    margin: 0 auto;
+  }
+}
