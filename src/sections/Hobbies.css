@@ -44,7 +44,7 @@
     transition: color 0.2s ease;
 }
 
-.hobbies-item:hover {
+.hobby-item:hover {
     color: var(--cyber-pink);
 }
 
