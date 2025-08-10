@@ -4,9 +4,9 @@ import "./Courses.css";
 const coursesList = [
   "Cybersecurity",
   "Android Development",
-  "Blockchain Fundamentals",
+  // "Blockchain Fundamentals",
   "Generative AI",
-  "Data Analytics",
+  // "Data Analytics",
   "Website Development",
   "Google Cloud Skill Boost Labs",
   "Logo Creation & Digital Product Design",
