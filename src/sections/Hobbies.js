@@ -3,7 +3,7 @@ import "./Hobbies.css";
 
 const hobbiesList = [
   "Exploring New Things",
-  "learning New Languages",
+  "Learning New Languages",
   "Photography",
   "Traveling",
   "UI Design",
