@@ -49,8 +49,8 @@ const Quality = () => {
         };
     }, []);
 
-    const next = () => setIndex((i) => Math.min(i + 1, mergedList.length - 1));
-    const prev = () => setIndex((i) => Math.max(i - 1, 0));
+    const next = useCallback(() => setIndex((i) => Math.min(i + 1, mergedList.length - 1)), [mergedList.length]);
+    const prev = useCallback(() => setIndex((i) => Math.max(i - 1, 0)), []);
 
     /*
     const handlers = useSwipeable({
@@ -106,7 +106,7 @@ const Quality = () => {
             window.removeEventListener("keydown", handleKey);
             window.removeEventListener("wheel", handleWheel);
         };
-    }, [debounce, isHovered]);
+    }, [debounce, isHovered, next, prev]); // Added next and prev as dependencies
 
     return (
         <div>

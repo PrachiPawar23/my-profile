@@ -1,18 +1,40 @@
+/* ─── Navbar ─── */
 .navbar {
   position: sticky;
   z-index: 1000;
   top: 0;
-  height: 70px;
-  padding-top: 25px;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-  /* background-color: rgba(0, 0, 0, 0.29); */
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  transition: all 0.4s var(--ease-in-out);
 }
 
 .navbar.scrolled {
-  padding-top: 0;
-  transition: 0.5s all ease-in-out;
-  background-color: var(--primary);
+  background: rgba(2, 5, 9, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+  box-shadow: 0 1px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Pill container ── */
+.navbar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 8px;
+  background: rgba(11, 18, 35, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 100px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  gap: 2px;
 }
 
 .navbar ul {
@@ -20,50 +42,107 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   margin: 0;
+  padding: 0;
+  gap: 1px;
 }
 
 .navbar li {
-  margin-right: 30px;
+  position: relative;
+  list-style: none;
 }
 
-.navbar li,
-nav-item {
+/* ── Nav items ── */
+.nav-item {
   cursor: pointer;
-  color: white;
-  background: rgba(8, 34, 53, 0.674);
-  padding: 15px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #4a5568;
+  background: transparent;
+  padding: 7px 13px;
+  border-radius: 100px;
+  transition: color 0.2s var(--ease-in-out), background 0.2s var(--ease-in-out);
   text-decoration: none;
-  display: inline-block;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  display: block;
 }
 
-.navbar button {
+.navbar button.nav-item {
   background: none;
   border: none;
-  color: white;
 }
 
-.navbar li:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.1);
-  border-radius: 12px;
-  box-shadow: 0 5px 15px var(--bs-cyber-blue);
+.navbar li:hover .nav-item {
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.055);
 }
 
-.navbar li:hover button {
+/* Underline glow indicator */
+.navbar li::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--cyber-blue);
+  opacity: 0;
+  transition: width 0.25s var(--ease-in-out), opacity 0.25s ease;
+  box-shadow: 0 0 10px var(--cyber-blue);
+}
+
+.navbar li:hover::after {
+  width: 20px;
+  opacity: 1;
+}
+
+/* ── Volume Button ── */
+.volume-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  color: #374151;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-in-out);
+  flex-shrink: 0;
+}
+
+.volume-btn:hover {
   color: var(--cyber-blue);
+  border-color: rgba(34, 211, 238, 0.3);
+  background: rgba(34, 211, 238, 0.07);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.18);
+}
+
+/* playing state */
+.volume-btn.playing {
+  color: var(--cyber-blue);
+  border-color: rgba(34, 211, 238, 0.25);
+  background: rgba(34, 211, 238, 0.05);
+}
+
+@media (max-width: 1024px) {
+  .nav-item {
+    padding: 6px 9px;
+    font-size: 0.74rem;
+  }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    height: 15px;
-  }
-
-  .navbar ul {
     display: none;
   }
 }

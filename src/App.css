@@ -1,57 +1,122 @@
+/* ─── Global Element Defaults ─── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 li {
-  font-size: small;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
-/* .v-divider {
-  width: 1px;
-  height: auto;
-  color: aliceblue;
-}
-
-.h-divider {
-  width: auto;
-  height: 1px;
-  color: aliceblue;
-} */
-
+h1 { font-size: clamp(1.8rem, 4vw, 3rem);   font-weight: 800; }
+h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 700; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.6rem); font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 600; }
 
 .divider {
-  border: 1px solid #ffffff;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  margin: 32px 0;
 }
 
 a {
-  transition: 3s all ease-in-out;
+  transition: all 0.25s var(--ease-in-out);
   text-decoration: none;
 }
 
 p {
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #94a3b8;
+  margin: 0;
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+/* ─── Section Title Utility ─── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyber-blue);
+  margin-bottom: 10px;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border-radius: 10px;
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 28px;
+  background: currentColor;
+  opacity: 0.4;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--cyber-orange);
-  border-radius: 10px;
+/* ─── Section header line style (shared across sections) ─── */
+.section-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
+.section-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, currentColor, transparent);
+  opacity: 0.25;
+}
+
+/* ─── Glass Card utility ─── */
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 var(--glass-shine);
+  position: relative;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  pointer-events: none;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  {
+  background: rgba(34, 211, 238, 0.22);
+  border-radius: 3px;
+}
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--cyber-purple);
+  background: rgba(167, 139, 250, 0.45);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(34, 211, 238, 0.2);
+  color: #f1f5f9;
 }
 
 @media only screen and (max-width: 768px) {
-  .divider {
-    border: 1px solid #ffffff;
-    width: 100%;
-  }
+  .divider { margin: 20px 0; }
 }

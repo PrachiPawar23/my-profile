@@ -1,50 +1,203 @@
-/* Profile */
+/* ─── Hero / Profile ─── */
 .about-me {
-    display: flex;
-    margin: 25px;
-    padding: 50px;
-    gap: 50px;
-    font-family: 'Courier New', Courier, monospace;
-    align-items: center;
-    justify-content: space-between;
-    text-align: justify;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #00eaffb3, #007cf0b3);
-    color: white;
+  display: flex;
+  margin: 32px 32px 24px;
+  padding: 48px 56px;
+  gap: 56px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  border-radius: var(--radius-xl);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.015),
+    0 32px 80px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 var(--glass-shine);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Top edge shine */
+.about-me::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.28), rgba(167, 139, 250, 0.2), transparent);
+  pointer-events: none;
+}
+
+/* Ambient corner glow — top right */
+.about-me::after {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.07), transparent 65%);
+  pointer-events: none;
+}
+
+/* Bottom-left ambient */
+.about-me .profile-info::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.05), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-info {
+  flex: 1;
+  z-index: 1;
+  position: relative;
+}
+
+/* ── Eyebrow tag ── */
+.profile-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyber-blue);
+  margin-bottom: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 5px 12px;
+  background: rgba(34, 211, 238, 0.06);
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 100px;
+}
+
+.profile-eyebrow::before {
+  content: '//';
+  opacity: 0.45;
+  font-size: 0.65rem;
+}
+
+/* ── Name ── */
+.profile-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  margin: 0 0 22px 0;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  background: linear-gradient(130deg, #ffffff 0%, #e2e8f0 45%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Typewriter text ── */
+.profile-typewriter {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: #4a5568;
+  max-width: 540px;
+  min-height: 120px;
+}
+
+/* ── Profile photo ring ── */
 .profile-image {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    border: 4px solid #ffffffcc;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-    /* border: 5px double rgba(195, 205, 205, 0.893); */
+  position: relative;
+  width: 210px;
+  height: 210px;
+  min-width: 210px;
+  border-radius: 50%;
+  z-index: 1;
+  animation: floatProfile 7s ease-in-out infinite;
+}
+
+/* Spinning conic gradient ring */
+.profile-image::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--cyber-blue),
+    var(--cyber-purple),
+    var(--cyber-pink),
+    var(--cyber-purple),
+    var(--cyber-blue)
+  );
+  animation: spinGlow 10s linear infinite;
+  z-index: -1;
+}
+
+/* Outer ambient glow ring */
+.profile-image::after {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.1), rgba(167, 139, 250, 0.07), transparent 68%);
+  z-index: -2;
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 .profile-image img {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    background: radial-gradient(#00eaffb3, #008d9a7f);
-    backdrop-filter: blur(25px);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #04060e;
+  padding: 4px;
+  display: block;
 }
 
+@keyframes floatProfile {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes spinGlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.65; transform: scale(1.04); }
+}
+
+/* ─── Mobile ─── */
 @media only screen and (max-width: 768px) {
   .about-me {
-    flex-direction: column;
-    min-height: 500px; 
-    height: auto; 
-    padding: 30px 20px;
-    margin: 15px;
-    gap: 15px;
-    overflow: hidden; 
+    flex-direction: column-reverse;
+    padding: 40px 28px 36px;
+    margin: 16px 14px;
+    gap: 28px;
+    text-align: center;
+    align-items: center;
+    border-radius: var(--radius-lg);
   }
 
-  .about-me-text {
-    max-height: 300px;
-    overflow-y: auto;
-    padding-right: 10px; 
+  .profile-name {
+    font-size: 1.9rem;
+  }
+
+  .profile-typewriter {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+
+  .profile-image {
+    width: 160px;
+    height: 160px;
+    min-width: 160px;
+  }
+
+  .profile-eyebrow {
+    font-size: 0.62rem;
   }
 }

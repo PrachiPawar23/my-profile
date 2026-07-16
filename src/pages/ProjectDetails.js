@@ -15,159 +15,199 @@ const ProjectDetails = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) {
-        setSidebarOpen(false);
-      }
+      if (window.innerWidth > 768) setSidebarOpen(false);
     };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Close zoom on Escape key
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") setZoomIndex(null);
+      if (e.key === "ArrowRight" && zoomIndex !== null) nextImage(e);
+      if (e.key === "ArrowLeft"  && zoomIndex !== null) prevImage(e);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [zoomIndex]);
+
+  // Scroll to top when project changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [projectId]);
 
   const currentProject = projects.find((p) => p.id === projectId);
 
   if (!currentProject) {
     return (
-      <div className="project-details-container">
-        <h3>Project not found</h3>
-        <button onClick={() => navigate("/projects")}>Back to Projects</button>
+      <div className="project-details-wrapper">
+        <div className="project-details-container" style={{ alignItems: "center", justifyContent: "center" }}>
+          <p style={{ color: "var(--text-muted)" }}>Project not found.</p>
+          <button className="back-button" onClick={() => navigate("/")}>
+            <HiArrowLeft size={18} /> Go Home
+          </button>
+        </div>
       </div>
     );
   }
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  const hasVideos      = currentProject.videos?.length > 0;
+  const hasScreenshots = currentProject.screenshots?.length > 0;
+  const hasMedia       = hasVideos || hasScreenshots;
+  const hasReferences  = Array.isArray(currentProject.references)
+    ? currentProject.references.length > 0
+    : !!currentProject.references;
 
-  const openZoom = (index) => setZoomIndex(index);
+  const openZoom  = (index) => setZoomIndex(index);
   const closeZoom = () => setZoomIndex(null);
 
   const nextImage = (e) => {
-    e.stopPropagation();
-    setZoomIndex((prev) => (prev === currentProject.screenshots.length - 1 ? 0 : prev + 1));
+    e?.stopPropagation();
+    setZoomIndex((prev) =>
+      prev === currentProject.screenshots.length - 1 ? 0 : prev + 1
+    );
   };
 
   const prevImage = (e) => {
-    e.stopPropagation();
-    setZoomIndex((prev) => (prev === 0 ? currentProject.screenshots.length - 1 : prev - 1));
+    e?.stopPropagation();
+    setZoomIndex((prev) =>
+      prev === 0 ? currentProject.screenshots.length - 1 : prev - 1
+    );
+  };
+
+  const handleNavigate = (pid) => {
+    navigate(`/projects/${pid}`);
+    if (isMobile) setSidebarOpen(false);
   };
 
   return (
     <div className="project-details-wrapper">
-      {/* Mobile Toggle Button */}
+
+      {/* ── Mobile sidebar toggle ── */}
       {isMobile && (
-        <button className="sidebar-toggle" onClick={toggleSidebar}>
-          <HiMenu size={24} />
+        <button
+          className="sidebar-toggle"
+          onClick={() => setSidebarOpen((o) => !o)}
+          title="Toggle project list"
+        >
+          <HiMenu size={20} />
         </button>
       )}
 
-      {/* Sidebar Overlay */}
+      {/* ── Sidebar overlay (mobile) ── */}
       {isMobile && sidebarOpen && (
-        <div className="sidebar-overlay" onClick={toggleSidebar} />
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
       )}
 
-      {/* Project Sidebar */}
-      <aside className={`project-sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <h3 style={{ marginLeft: '10px' }}>Projects</h3>
+      {/* ── Project list sidebar ── */}
+      <aside className={`project-sidebar${sidebarOpen ? " open" : ""}`}>
+        <h3>All Projects</h3>
         <ul>
           {projects.map((project) => (
             <li
               key={project.id}
               className={project.id === projectId ? "active" : ""}
-              onClick={() => {
-                navigate(`/projects/${project.id}`);
-                if (isMobile) setSidebarOpen(false);
-              }}
+              onClick={() => handleNavigate(project.id)}
             >
               {project.title}
             </li>
           ))}
         </ul>
       </aside>
-      {/* <aside className="project-sidebar">
-        <h3 style={{ marginLeft: '10px' }}>Projects</h3>
-        <ul>
-          {projects.map((project) => (
-            <li
-              key={project.id}
-              className={project.id === projectId ? "active" : ""}
-              onClick={() => navigate(`/projects/${project.id}`)}
-            >
-              {project.title}
-            </li>
-          ))}
-        </ul>
-      </aside> */}
 
+      {/* ── Main content ── */}
       <main className="project-details-container">
+
+        {/* Header */}
         <div className="project-header">
-          <HiArrowLeft onClick={() => navigate("/")} className="back-button" />
+          <HiArrowLeft
+            className="back-button"
+            size={18}
+            onClick={() => navigate("/")}
+            title="Back to home"
+          />
           <div className="project-details-title">
             <h3>{currentProject.title}</h3>
+            {currentProject.featured && (
+              <span className="project-details-featured-tag">Featured</span>
+            )}
           </div>
         </div>
 
+        {/* Year */}
         <section className="project-year">
           <h3>Year</h3>
           <p>{currentProject.year}</p>
         </section>
 
+        {/* Abstract */}
         <section className="project-abstract">
-          <h3>Abstract</h3>
+          <h3>About</h3>
           <p>{currentProject.abstract}</p>
         </section>
 
-        <section className="project-techstack">
-          <h3>Tech Stack</h3>
-          <ul>
-            {(currentProject.techStack || currentProject.stack?.split(", "))?.map((tech, idx) => (
-              <li key={idx}>{tech}</li>
-            ))}
-          </ul>
-        </section>
+        {/* Tech Stack */}
+        {currentProject.techStack?.length > 0 && (
+          <section className="project-techstack">
+            <h3>Tech Stack</h3>
+            <ul>
+              {currentProject.techStack.map((tech, idx) => (
+                <li key={idx}>{tech}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-        <section className="project-media">
-          {currentProject.videos?.length > 0 && (
-            <>
-              <h3>Videos</h3>
-              <div className="videos-container">
-                {currentProject.videos.map((videoUrl, idx) => {
-                  const isPortrait = videoUrl.includes("portrait");
-                  return (
-                    <iframe
+        {/* Media: videos + screenshots */}
+        {hasMedia && (
+          <section className="project-media">
+
+            {hasVideos && (
+              <>
+                <h3>Videos</h3>
+                <div className="videos-container">
+                  {currentProject.videos.map((videoUrl, idx) => {
+                    const isPortrait = videoUrl.includes("portrait");
+                    return (
+                      <video
+                        key={idx}
+                        src={videoUrl}
+                        className={isPortrait ? "portrait-video" : "landscape-video"}
+                        controls
+                        preload="metadata"
+                        playsInline
+                      />
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {hasScreenshots && (
+              <>
+                <h3>Screenshots</h3>
+                <div className="screenshots-container">
+                  {currentProject.screenshots.map((src, idx) => (
+                    <img
                       key={idx}
-                      src={videoUrl}
-                      title={`Project video ${idx + 1}`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className={isPortrait ? "portrait-video" : "landscape-video"}
-                    ></iframe>
-                  );
-                })}
-              </div>
-            </>
-          )}
+                      src={src}
+                      alt={`${currentProject.title} screenshot ${idx + 1}`}
+                      className="screenshot"
+                      onClick={() => openZoom(idx)}
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+              </>
+            )}
 
-          {currentProject.screenshots?.length > 0 && (
-            <>
-              <h3>Screenshots</h3>
-              <div className="screenshots-container">
-                {currentProject.screenshots.map((src, idx) => (
-                  <img
-                    key={idx}
-                    src={src}
-                    alt={`Project screenshot ${idx + 1}`}
-                    className="screenshot"
-                    onClick={() => openZoom(idx)}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </section>
+          </section>
+        )}
 
-        {currentProject.references?.length > 0 && (
+        {/* References */}
+        {hasReferences && (
           <section className="project-references">
             <h3>Reference</h3>
             <p>
@@ -182,23 +222,28 @@ const ProjectDetails = () => {
           </section>
         )}
 
-        {zoomIndex !== null && (
-          <div className="zoom-modal" onClick={closeZoom}>
-            <button className="zoom-arrow left" onClick={prevImage}>
-              <HiChevronLeft size={40} />
-            </button>
-            <img
-              src={currentProject.screenshots[zoomIndex]}
-              alt="Zoomed screenshot"
-              className="zoomed-image"
-              onClick={(e) => e.stopPropagation()}
-            />
-            <button className="zoom-arrow right" onClick={nextImage}>
-              <HiChevronRight size={40} />
-            </button>
-          </div>
-        )}
       </main>
+
+      {/* ── Zoom modal ── */}
+      {zoomIndex !== null && (
+        <div className="zoom-modal" onClick={closeZoom}>
+          <button className="zoom-arrow left" onClick={prevImage} title="Previous">
+            <HiChevronLeft size={24} />
+          </button>
+
+          <img
+            src={currentProject.screenshots[zoomIndex]}
+            alt={`${currentProject.title} screenshot ${zoomIndex + 1}`}
+            className="zoomed-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <button className="zoom-arrow right" onClick={nextImage} title="Next">
+            <HiChevronRight size={24} />
+          </button>
+        </div>
+      )}
+
     </div>
   );
 };

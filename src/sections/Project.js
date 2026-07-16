@@ -10,12 +10,15 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div
-      className={`project-card ${flipped ? "flipped" : ""}`}
+      className={`project-card${flipped ? " flipped" : ""}${project.featured ? " featured" : ""}`}
       onClick={() => setFlipped(!flipped)}
       title="Click to flip"
     >
       <div className={`project-inner ${flipped ? "flipped" : ""}`}>
         <div className="project-front">
+          {project.featured && (
+            <span className="project-featured-tag">Featured</span>
+          )}
           <h3>{project.title}</h3>
           <p>
             {project.abstract.length > 120

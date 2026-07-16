@@ -1,27 +1,60 @@
 import "./Skills.css";
 
 const skillsList = [
+  // Programming Languages
+  "Python",
   "Java",
-  "JavaFX",
+  "C/C++",
+  "JavaScript",
+  "XML",
+  "YAML",
+  "SQL",
+  // Web & Frameworks
   "ReactJS",
+  "Flask",
   "HTML",
   "CSS",
-  "Git",
-  "SQL",
-  "Basic Python",
-  "Basic C/C++",
-  "Basic JavaScript",
-  "Basic Android Studio - Java",
+  "JavaFX",
+  "Drupal CMS",
+  // QA & Testing
+  "Cypress",
+  "Postman",
+  "REST API Testing",
+  "API Automation",
+  "Regression Testing",
+  "Functional Testing",
+  "Load Testing",
+  "Manual Testing",
+  // Data & Infra
+  "Elasticsearch",
+  "Kibana",
+  "Google Cloud Storage (GCS)",
+  "Google Kubernetes Engine (GKE)",
+  "Vertex AI / Gemini",
+  "OpenAPI",
+  "RabbitMQ",
+  // Mobile & Other Dev
+  "Android Studio - Java",
   "Android Studio - XML",
+  "Firebase",
+  // Security & Networking
+  "Wireshark",
+  "Nmap",
+  "VMWare",
+  // Tools
+  "Git",
+  "GitHub",
+  "Figma",
+  "Canva",
+  "Adobe",
 ];
 
 const languages = [
   "English B2-C1",
   "Hindi",
   "Marathi",
-  "Spanish A1",
-  "Introductory German",
-  "Introductory Korean",
+  "Korean (Learning)",
+  "Spanish A2",
 ];
 
 const Skills = () => {

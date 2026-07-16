@@ -1,90 +1,126 @@
+/* ─── Interests ─── */
+/* Class names match Interest.js JSX:
+   section.interests > .interest-section >
+     .interest-container > h1.interest-title
+   .interest-grid > .interest-item
+*/
+
+/* Outer section wrapper */
+section.interests {
+  /* margin handled by .personality-section grid gap */
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+}
+
 .interest-section {
-    padding: 40px 50px;
-    background-color: rgba(0, 0, 0, 0.29);
-    max-height: 550px;
-    width: 100%;
-    overflow-y: auto;
-    border-left: 2px solid white;
+  padding: 40px 48px;
+  flex: 1;
+  min-height: 0;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 var(--glass-shine);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top shine */
+.interest-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 121, 249, 0.28), transparent);
+  pointer-events: none;
+}
+
+/* Ambient glow */
+.interest-section::after {
+  content: '';
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(232, 121, 249, 0.05), transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Header container ── */
+.interest-container {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
 }
 
 .interest-title {
-    font-size: 2rem;
-    color: var(--cyber-blue);
-    text-shadow: 0 0 10px var(--cyber-blue);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyber-pink);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .interest-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 2px;
-    background-color: var(--cyber-pink);
-    box-shadow: 0 0 5px var(--cyber-pink);
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(232, 121, 249, 0.3), transparent);
 }
 
+/* ── Grid ── */
 .interest-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .interest-item {
-    background-color: #fff;
-    color: #081324;
-    padding: 12px 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(232, 121, 249, 0.04);
+  border: 1px solid rgba(232, 121, 249, 0.1);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #c4a0e8;
+  cursor: default;
+  transition: all 0.24s var(--ease-in-out);
+  letter-spacing: 0.005em;
+  line-height: 1.45;
+  font-family: 'Inter', sans-serif;
 }
 
 .interest-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--cyber-pink);
+  background: rgba(232, 121, 249, 0.1);
+  border-color: rgba(232, 121, 249, 0.28);
+  transform: translateY(-4px);
+  color: #f0d0ff;
+  box-shadow: 0 8px 24px rgba(232, 121, 249, 0.14);
 }
 
 @media only screen and (max-width: 768px) {
+  section.interests {
+    margin: 0;
+    height: auto;
+    flex: unset;
+  }
+
   .interest-section {
-    padding: 30px 20px;
-    max-height: 550px;
-    top: -20px;
-    border-left: none;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
-  }
-
-  .interest-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-
-  .interest-title::after {
-    width: 80px;
+    padding: 30px 18px;
+    border-radius: var(--radius-lg);
   }
 
   .interest-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-    padding: 15px 0;
-  }
-
-  .interest-item {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
-
-  .interest-item:hover {
-    transform: scale(1.03);
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   }
 }

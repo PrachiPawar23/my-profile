@@ -3,13 +3,23 @@ import "./Interest.css";
 
 const Interest = () => {
     const [interests] = useState([
-        "Cybersecurity", "Web Development", "Software Development",
-        "Mobile App Development", "Android Development", "Game Development",
-        "Artificial Intelligence", "Machine Learning", "Neural Networks", "Deep Learning",
-        "User Interface (UI) Design", "User Experience (UX) Design", "Robotics",
-        "Internet of Things (IoT)", "Military Applications", "Space Exploration",
-        "Geography", "Psychology", "Language Learning", "Writing", "Photography",
-        "Music", "Art & Drawing", "Traveling", "Culture", "Sports", "Games"
+        // Cybersecurity
+        "Cybersecurity", "Network Security", "Cloud Security", "Security Consulting",
+        "Threat Intelligence", "Threat Detection", "Threat Prevention", "Incident Response", "SOC Operations",
+        "Vulnerability Assessment", "Security Automation", "Identity & Access Management",
+        "API Security", "Malware Analysis", "Digital Forensics", "AI for Cybersecurity",
+        // AI & Software
+        "Artificial Intelligence", "Machine Learning", "Agentic AI", "Explainable AI",
+        "Neural Networks", "Deep Learning", "Software Engineering", "System Design",
+        // Web & Dev
+        "Web Development", "Mobile App Development", "Android Development",
+        // Cloud & Infra
+        "Cloud Computing", "Docker", "Kubernetes", "Linux",
+        // Other Tech
+        "Internet of Things (IoT)", "Robotics", "Space Exploration",
+        // Personal
+        "Geography", "Language Learning", "Psychology", "Writing", "Photography",
+        "Music", "Art & Drawing", "Sports", "Games", "Military Applications",
     ]);
 
 

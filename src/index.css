@@ -1,42 +1,102 @@
+/* ─────────────────────────────────────
+   GLOBAL BASE & DESIGN TOKENS
+───────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: url("./images/bg1.png");
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: #020509;
+  background-image:
+    radial-gradient(ellipse at 5%  0%,  rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 95% 5%,  rgba(6, 182, 212, 0.08)  0%, transparent 45%),
+    radial-gradient(ellipse at 50% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 60%,  rgba(232, 121, 249, 0.04) 0%, transparent 40%);
   background-attachment: fixed;
-  /* background: #081324; */
-  font-family: 'Inter', 'Roboto', sans-serif;
+  color: #e2e8f0;
+  font-family: 'Inter', 'Outfit', -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: 'Courier New', monospace;
+code, pre {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 :root {
-  --background: #ffffff;
-  --text-primary: #000000;
+  /* ── Core Backgrounds ── */
+  --bg-deep:      #020509;
+  --bg-surface:   #070b18;
+  --bg-raised:    #0b1223;
+  --bg-card:      #0d1626;
+  --background:   #020509;
 
-  --primary: #081324;
-  --dark-blue: rgb(10, 33, 51);
-  /* --dark-blue: rgb(15, 54, 84); */
-  --cyber-blue: #00eaff; /* #00ffff */
-  --cyber-pink: #ff00ff;
-  --cyber-purple: #800080;
-  --cyber-green: #2cd12c;
-  --cyber-yellow: #ffff00;
-  --cyber-mint: #00ff94;
-  --cyber-orange: #ff7f00;
+  /* ── Text Scale ── */
+  --text-primary:   #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted:     #475569;
+  --text-faint:     #2d3748;
 
-  --grad-bg1: #80008085; 
-  --grad-bg2: #00eaff7b;
+  /* ── Accent Palette ── */
+  --primary:        #020509;
+  --dark-blue:      #0f172a;
+  --cyber-blue:     #22d3ee;
+  --cyber-pink:     #e879f9;
+  --cyber-purple:   #a78bfa;
+  --cyber-green:    #34d399;
+  --cyber-yellow:   #fbbf24;
+  --cyber-mint:     #6ee7b7;
+  --cyber-orange:   #fb923c;
+  --cyber-red:      #f87171;
 
-  /* --icy-blue: #e0e6ff; */
-  --bs-cyber-blue: rgba(0, 255, 255, 0.3);
-  --glass: rgba(255, 255, 255, 0.08);
-  --glass-primary: rgba(0, 255, 255, 0.08);
-  --glass-secondary: rgba(0, 255, 153, 0.08);
-  --glass-dark: rgba(0, 0, 0, 0.29);
+  /* ── Glow Shadows ── */
+  --glow-blue:    0 0 20px rgba(34, 211, 238, 0.25);
+  --glow-pink:    0 0 20px rgba(232, 121, 249, 0.25);
+  --glow-purple:  0 0 20px rgba(167, 139, 250, 0.25);
+  --glow-green:   0 0 20px rgba(52, 211, 153, 0.25);
+  --glow-yellow:  0 0 20px rgba(251, 191, 36, 0.25);
+
+  /* ── Glow RGBA values ── */
+  --glow-blue-rgba:   rgba(34, 211, 238, 0.2);
+  --glow-pink-rgba:   rgba(232, 121, 249, 0.2);
+  --glow-purple-rgba: rgba(167, 139, 250, 0.2);
+  --glow-green-rgba:  rgba(52, 211, 153, 0.2);
+  --glow-yellow-rgba: rgba(251, 191, 36, 0.2);
+
+  /* ── Glass System ── */
+  --glass:               rgba(11, 18, 35, 0.55);
+  --glass-primary:       rgba(11, 18, 35, 0.65);
+  --glass-secondary:     rgba(16, 24, 46, 0.55);
+  --glass-dark:          rgba(2, 5, 9, 0.8);
+  --glass-border:        rgba(255, 255, 255, 0.055);
+  --glass-border-hover:  rgba(255, 255, 255, 0.11);
+  --glass-shine:         rgba(255, 255, 255, 0.035);
+
+  /* ── Spacing & Radii ── */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-2xl: 40px;
+
+  /* ── Transitions ── */
+  --ease-out:   cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
