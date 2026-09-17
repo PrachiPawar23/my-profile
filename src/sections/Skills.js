@@ -1,5 +1,6 @@
 import "./Skills.css";
 
+
 const skillsList = [
   // Programming Languages
   "Python",
@@ -12,8 +13,10 @@ const skillsList = [
   // Web & Frameworks
   "ReactJS",
   "Flask",
+  "Angular",
   "HTML",
   "CSS",
+  "Bootstrap",
   "JavaFX",
   "Drupal CMS",
   // QA & Testing
@@ -21,6 +24,7 @@ const skillsList = [
   "Postman",
   "REST API Testing",
   "API Automation",
+  "Sanity Testing",
   "Regression Testing",
   "Functional Testing",
   "Load Testing",
@@ -38,6 +42,8 @@ const skillsList = [
   "Android Studio - XML",
   "Firebase",
   // Security & Networking
+  "Linux",
+  "Shell Scripting",
   "Wireshark",
   "Nmap",
   "VMWare",
@@ -50,11 +56,11 @@ const skillsList = [
 ];
 
 const languages = [
-  "English B2-C1",
-  "Hindi",
-  "Marathi",
-  "Korean (Learning)",
-  "Spanish A2",
+  "English: B2-C1",
+  "Hindi: Proficient",
+  "Marathi: Native",
+  "Korean: (Learning)",
+  "Spanish: A2 (Learning)",
 ];
 
 const Skills = () => {
